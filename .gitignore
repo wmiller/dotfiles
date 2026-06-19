@@ -1,0 +1,51 @@
+# I let AI generate this. It seems reasonable.
+
+# SECURITY: NEVER COMMIT THESE
+# SSH keys and identities
+*.pem
+*.key
+id_rsa
+id_ed25519
+*.pub
+*.p12
+*.pfx
+
+# Sensitive configuration files
+.netrc
+.ssh/
+*.secret
+*.env
+.vault
+secrets/
+
+# GPG/PGP keys and credentials
+*.gpg
+*.asc
+
+# LOCAL OVERRIDES: Files you want to keep but not sync
+# A common pattern is to have a ".local" file in your config that
+# contains machine-specific paths or API keys.
+*.local
+_local
+
+# EDITOR NOISE: Temporary/junk files from tools
+# Vim swap and undo files
+*.swp
+*.swo
+*.undo
+*~
+.netrwhist
+
+# Python cache (if you have python scripts in your dotfiles)
+__pycache__/
+*.py[cod]
+
+# OS NOISE: System-generated files
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows/Linux
+Thumbs.db
+desktop.ini
