@@ -1,0 +1,78 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+let mapleader=" "
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+" Surround plugin
+Plug 'tpope/vim-surround'
+
+" Which-key
+set which-key
+set notimeout
+
+" Nerdtree
+set nerdtree
+map <leader>ee <Action>(ActivateProjectToolWindow)
+
+" Distraction-free mode
+map <leader>zz <Action>(ToggleDistractionFreeMode)
+let g:WhichKeyDesc_distraction_free = "<leader>zz Distraction Free Mode"
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+" Window splitting and navigation
+map <c-o> <Action>(Back)
+map <c-i> <Action>(Forward)
+map <c-\> <Action>(SplitVertically)
+map <c--> <Action>(SplitHorizontally)
+map <c-=> <Action>(Unsplit)
+map <c-m> <Action>(MoveEditorToOppositeTabGroup)
+
+" Use ctrl-{hjkl} to navigate splits
+:nnoremap <C-h> <C-w>h
+:nnoremap <C-l> <C-w>l
+:nnoremap <C-k> <C-w>k
+:nnoremap <C-j> <C-w>j
+
+map <leader>ch <Action>(SwitchHeaderSource)
+map <leader>sf <Action>(SearchEverywhere)
+map <leader>ca <Action>(ShowIntentionActions)
+map <leader>sg <Action>(FindInPath)
+
+gap <Enter> o<ESC>
+map <S-Enter> O<ESC>
+:inoremap jj <ESC>
+set showmatch		" show matching
+set incsearch		" incremental search
+set ignorecase		" ignore case when searching
+
+map <leader>sa <Action>(GotoAction)
+let g:WhichKeyDesc_search_action = "<leader>sa Action"
