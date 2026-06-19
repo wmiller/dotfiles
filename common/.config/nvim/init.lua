@@ -3,7 +3,6 @@ vim.g.maplocalleader = " "
 
 vim.opt.winborder = "rounded"
 vim.opt.number = true
-vim.opt.wrap = false
 vim.opt.termguicolors = true
 
 -- Indentation
@@ -20,20 +19,30 @@ vim.opt.smartcase = true -- Case sensitive if uppercase in search
 vim.opt.hlsearch = false -- highlight search
 vim.opt.incsearch = true -- Show matches as you type
 
+-- Word wrap
+vim.opt.wrap = true -- Enable visual line wrapping
+vim.opt.linebreak = true -- Break lines at word boundaries instead of character
+vim.opt.breakindent = true -- Keep indentation for wrapped lines to preserve code readibility
+
+-- Theme!
 vim.cmd.colorscheme("catppuccin")
 
 local map = vim.keymap.set
 
+-- Basics
 map("i", "jj", "<esc>")
 map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
 map("n", "<esc>", "<cmd>nohlsearch<CR>")
 
--- Navigation
+-- Split navigation
 map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- Editing
+map({'n', 'i'}, '<C-BS>', '<C-W>', { noremap = true, silent = true })
+map({'n', 'i'}, '<C-h>', '<C-W>', { noremap = true, silent = true })
 
 require("vim._core.ui2").enable()
