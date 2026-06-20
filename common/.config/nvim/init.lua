@@ -45,4 +45,4 @@ map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 map({'n', 'i'}, '<C-BS>', '<C-W>', { noremap = true, silent = true })
 map({'n', 'i'}, '<C-h>', '<C-W>', { noremap = true, silent = true })
 
-require("vim._core.ui2").enable()
+require("vim._core.ui2").enable({})
