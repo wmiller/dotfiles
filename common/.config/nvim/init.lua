@@ -45,4 +45,11 @@ map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 map({'n', 'i'}, '<C-BS>', '<C-W>', { noremap = true, silent = true })
 map({'n', 'i'}, '<C-h>', '<C-W>', { noremap = true, silent = true })
 
+-- Neovide-specific stuff
+if vim.g.neovide then
+	vim.g.neovide_scale_factor = 0.8
+	vim.g.neovide_corner_preference = "round"
+	vim.g.neovide_scroll_animation_length = 0.1
+end
+
 require("vim._core.ui2").enable({})
