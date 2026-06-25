@@ -37,7 +37,7 @@ require("mason-lspconfig").setup({
 
 for server, config in pairs(lsp_servers) do
 	vim.lsp.config(server, {
-		settings = config,
+		settings = config.settings,
 		on_attach = function(_, bufnr)
 			-- Create keymaps if the server actually attaches
 		end
