@@ -4,6 +4,7 @@ vim.g.maplocalleader = " "
 vim.opt.winborder = "rounded"
 vim.opt.number = true
 vim.opt.termguicolors = true
+vim.opt.signcolumn = "yes"
 
 -- Indentation
 vim.opt.tabstop = 4 -- tab width
